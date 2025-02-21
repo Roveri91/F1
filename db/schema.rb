@@ -10,14 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_02_21_002751) do
+ActiveRecord::Schema[7.2].define(version: 2025_02_21_005219) do
   create_table "drivers", force: :cascade do |t|
-    t.string "name"
+    t.string "first_name"
     t.string "team"
     t.string "car_number"
     t.integer "point"
     t.string "position"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "last_name"
   end
 end
