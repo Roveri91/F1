@@ -1,2 +1,4 @@
 <h1>Drivers#index</h1>
-<p>Find me in app/views/drivers/index.html.erb</p>
+<% @drivers.each do |driver| %>
+<p><%= driver.first_name %></p>
+<% end %>

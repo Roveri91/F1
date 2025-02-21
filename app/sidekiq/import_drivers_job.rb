@@ -14,7 +14,8 @@ class ImportDriversJob
     drivers = JSON.parse(response.body)
 
     drivers.each do |driver_data|
-      Driver.find_or_create_by(driver_id: driver_data["driver_number"]) do |driver|
+      next if driver_data["first_name"].blank? || driver_data["last_name"].blank?
+      Driver.find_or_create_by(id: driver_data["driver_number"]) do |driver|
         driver.first_name = driver_data["first_name"]
         driver.last_name  = driver_data["last_name"]
         driver.car_number = driver_data["driver_number"]
